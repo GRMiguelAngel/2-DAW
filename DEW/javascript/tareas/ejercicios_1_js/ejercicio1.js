@@ -1,22 +1,22 @@
 function three_var_control(){
 
-    let array = [
+    let all_nums = [
     parseFloat(document.getElementById("num1_ejer1").value),
     parseFloat(document.getElementById("num2_ejer1").value),
     parseFloat(document.getElementById("num3_ejer1").value)
     ]
 
-    if (lower_than(array,0)){
+    if (lower_than(all_nums,0)){
         message = "Error: hay variables con valores negativos.";
     } 
-    else if (equal_to(array,0)){
+    else if (equal_to(all_nums,0)){
         message = "Error: todas las variables son iguales a cero.";
     }
-    else if (greater_than(array, 10) && diferent_than(array)){
-        message = "Error: la suma total de las variables es mayor a 10, siendo todas estas diferentes."
+    else if (greater_than(all_nums, 10) && diferent_than(all_nums)){
+        message = "Error: la suma total de las variables es mayor a 10, siendo todas estas diferentes.";
     }
     else {
-        message = "Todo esta correcto."
+        message = "Todo esta correcto.";
     }
     document.getElementById("result1").textContent = message;
     console.log(message);
@@ -57,11 +57,12 @@ function greater_than(all_nums, limit)
     if (num_sum > limit){
         is_greater = true;
     }
+    console.log(is_greater);
     return is_greater;
     }
 
 
 function diferent_than(all_nums)
 {
-    return equal_to(all_nums,all_nums[1]) && equal_to(all_nums,all_nums[2]) && equal_to(all_nums,all_nums[3]);
+    return equal_to(all_nums[0],all_nums[1]) && equal_to(all_nums[0],all_nums[2]) && equal_to(all_nums[1],all_nums[2]);
 }
