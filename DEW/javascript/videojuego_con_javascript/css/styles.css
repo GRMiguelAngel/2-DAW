@@ -1,40 +1,29 @@
-body {
-    margin: 10px;
-    background-image: url('../images/background.jpg');
-}
+body { margin:10px; background-image: url("../images/wall.jpg"); }
 
 .container {
-    width: 800px;
-    margin: 0 auto;
+  width:800px;
+  margin:0 auto;
 }
 
 .barra {
-    background-color: #000;
-    color: #fff;
-    font-size: 20px;
-    height: 40px;
-    width: 700px;
-    padding: 10px;
-    margin: 9px 0;
-    box-sizing: border-box;
+  background-color:#000000;
+  color: #ffffff;
+  font-size: 20px;
+  height: 20px; width: 700px;
 }
-
-#my_canvas {
-    background: #000;
-    border: #000 1px solid;
+#my_canvas{ 
+  background:#000000; 
+  border:#000 1px solid; 
 }
-
-.button {
-    color: red;
+.boton{
+    color:red;
     font-size: 40px;
-    background-color: #000;
+    background-color: #000000;
     cursor: pointer;
     border-radius: 8px;
-    border: 2px solid blue;
+    border:2px solid blue;
 }
-
-.botton:hover {
-    background-color: #fff;
-    color: #000;
+.boton:hover{
+    background-color: white;
+    color: #000000;
 }
-
