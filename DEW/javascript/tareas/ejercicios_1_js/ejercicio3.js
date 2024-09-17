@@ -1,5 +1,6 @@
 function for_loop(){
-    for (let i = 0, j = 20; i < 8 && j > 0; i++ , j -= 3){
-        console.log(i, j);
+    for (let num1 = 0, num2 = 20; num1 < 8 && num2 > 0; num1++ , num2 -= 3){
+        console.log(num1, num2);
     }
+
 }
