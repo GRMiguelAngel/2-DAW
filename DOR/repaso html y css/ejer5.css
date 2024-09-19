@@ -1,0 +1,22 @@
+div.titulo {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: blue;
+    text-decoration:underline;
+}
+
+p {
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+p#p1 {
+    text-align: right;
+    color: red;
+}
+
+p#p2 {
+    text-align: left;
+    color: blue;
+}
