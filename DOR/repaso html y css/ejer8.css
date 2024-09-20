@@ -1,0 +1,11 @@
+* {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+header {
+    color: white;
+    background-color: gray;
+    padding: 8px;
+    
+}
