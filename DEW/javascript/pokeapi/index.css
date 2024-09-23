@@ -1,0 +1,15 @@
+.input {
+    visibility: hidden;
+}
+
+.button_menu {
+    visibility: hidden;
+}
+
+.lista_pokemon {
+    visibility: hidden;
+}
+
+.loading_datum {
+    visibility: hidden;
+}
