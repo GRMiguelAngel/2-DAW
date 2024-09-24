@@ -6,8 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="get" action="get_post.php">
-        Nombre: <input type="submit" name="enviar" value="enviar">
-    </form>
+    <a href="pagina2.php?name=alex">redi</a>
 </body>
 </html>
