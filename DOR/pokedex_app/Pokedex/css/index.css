@@ -63,7 +63,8 @@ body {
 
 @keyframes resizePokemon {
     0% { transform: scale(1)}
-    100% { transform: scale(1.2)}
+    50% {transform: scale(1.2)}
+    100% { transform: scale(1)}
 }
 
 .types {
@@ -73,6 +74,6 @@ body {
 }
 
 .size {
-    background-color: #9B8;
-    
+    background-image: linear-gradient( rgb(220, 255, 20), rgb(103, 137, 6));
+    text-shadow: 1px 1px 8px rgb(34, 36, 28);
 }
