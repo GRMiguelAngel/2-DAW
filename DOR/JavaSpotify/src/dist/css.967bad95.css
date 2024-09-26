@@ -1,0 +1,27 @@
+div {
+    margin: auto;
+    padding: 7px;
+}
+
+div .cover {
+    width: 200px;
+    height: 200px;
+    background-color: wheat;
+    background-size: cover;
+}
+
+div .cv1 {
+    background-image: url("/cover1.9e2af4d1.jpeg");
+}
+
+div .cv2 {
+    background-image: url("/cover2.2db1b76c.jpeg");
+}
+
+div .cv3 {
+    background-image: url("/cover3.62d30c8c.jpeg");
+}
+
+
+
+/*# sourceMappingURL=/css.967bad95.css.map */
