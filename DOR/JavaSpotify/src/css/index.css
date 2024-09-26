@@ -1,4 +1,24 @@
 div {
+    margin: auto;
+    padding: 7px;
+}
+
+div .cover {
     width: 200px;
     height: 200px;
+    background-color: wheat;
+    background-size: cover;
 }
+
+div .cv1 {
+    background-image: url("../assets/images/cover1.jpeg");
+}
+
+div .cv2 {
+    background-image: url("../assets/images/cover2.jpeg");
+}
+
+div .cv3 {
+    background-image: url("../assets/images/cover3.jpeg");
+}
+
