@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+
+function sum_avg(...nums){
+    let total_sum = 0;
+    let num_of_numbers = 0;
+    for (num of nums){
+        if (Number.isInteger(num)){
+            total_sum += num;
+        } else {
+            console.log(`la variable ${num} no es un número, no se tendrán encuenta en la suma.`);
+        }
+        num_of_numbers += 1;
+    }
+    if (num_of_numbers > 0){
+        console.log(`avg = ${total_sum/num_of_numbers}`);
+        return total_sum
+    } else {
+        console.log("Debe de introducir al menos una variable.")
+    }
+}
+
+</script>
+</html>
