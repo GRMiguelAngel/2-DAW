@@ -139,7 +139,7 @@ var map = {};
 var aux = 1;
 for (var _i = 0, _Object$keys = Object.keys(_.default); _i < _Object$keys.length; _i++) {
   var key = _Object$keys[_i];
-  map[".item-" + aux] = "../assets/songs/" + key + ".mp3";
+  map[".item-" + aux] = _.default[key];
   aux++;
 }
 console.log(map);
@@ -168,7 +168,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35655" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45527" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

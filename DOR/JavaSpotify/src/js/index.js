@@ -5,7 +5,7 @@ const map = {};
 
 let aux = 1;
 for (var key of Object.keys(songs)) {
-    map[".item-" + aux] = "../assets/songs/" + key + ".mp3";
+    map[".item-" + aux] = songs[key];
     aux++;
 }
 console.log(map);

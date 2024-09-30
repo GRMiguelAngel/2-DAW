@@ -1,24 +1,30 @@
-div {
-    margin: auto;
+body {
+    background-image: linear-gradient(rgb(221, 26, 26), rgb(99, 2, 99));
+    height: 100vh;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
     padding: 7px;
 }
 
-div .cover {
+.cover {
     width: 200px;
     height: 200px;
     background-color: wheat;
     background-size: cover;
 }
 
-div .cv1 {
+.cv1 {
     background-image: url("/cover1.9e2af4d1.jpeg");
 }
 
-div .cv2 {
+.cv2 {
     background-image: url("/cover2.2db1b76c.jpeg");
 }
 
-div .cv3 {
+.cv3 {
     background-image: url("/cover3.62d30c8c.jpeg");
 }
 
