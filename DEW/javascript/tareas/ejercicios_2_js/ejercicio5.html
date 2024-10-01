@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    function calc_dni(number) {
+    if (number < 0 || number > 99999999) {
+        return "Número de DNI inválido";
+    }
+    const dni_letters = "TRWAGMYFPDXBNJZSQVHLCKET";
+    let module = number % 23;
+    return `${number}${dni_letters[module]}`;
+}
+</script>
+</html>

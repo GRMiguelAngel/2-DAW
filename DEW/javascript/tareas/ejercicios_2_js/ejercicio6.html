@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+function separate(csv_input = "", delimiter = ",") {
+    let all_elemnts = csv_input.split(delimiter);
+    let num_elements = all_elemnts.length;
+    let result = `Se han detectado ${num_elements}:\n`;
+    for (let index = 0; index < num_elements; index++) {
+        result += `Elemento ${index + 1}: ${all_elemnts[index]}\n`;
+    }
+    return result;
+}
+</script>
+</html>

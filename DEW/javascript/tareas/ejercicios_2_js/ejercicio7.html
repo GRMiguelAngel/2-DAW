@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    function Point(text) {
+    const lower_case_text = text.toLowerCase().trim();
+    let points =0
+    if (lower_case_text.startsWith('el') || lower_case_text.startsWith('la')) {
+        points += 1;
+    }
+    if (lower_case_text.endsWith('ando') || lower_case_text.endsWith('endo')) {
+        points += 10;
+    }
+    if (/\b\w+\b\scon\s\b\w+\b/.test(text)) {
+        points += 100;
+    }
+    return points;
+}
+</script>
+</html>
