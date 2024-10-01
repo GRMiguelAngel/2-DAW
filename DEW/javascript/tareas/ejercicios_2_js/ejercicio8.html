@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+</body>
+<script>
+    function find_arriba(text) {
+    if (!text.toLowerCase().includes("arriba")) {
+        return "La palabra 'arriba' no está en el texto";
+    } else {
+        let new_text = text.replace(/arriba/gi, "abajo");
+        return `La palabra 'arriba' fue encontrada\n${new_text}`;
+    }
+}
+
+console.log(findarriba("Arriba el ánimo, que todo va a salir bien. ¡Arriba!"));
+</script>
+</html>

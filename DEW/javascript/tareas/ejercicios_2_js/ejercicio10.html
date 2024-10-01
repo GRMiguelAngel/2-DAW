@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    function find_palindrome(text) {
+        let text_without_space = text.toLowerCase().replace(/\s+/g, '');
+        let reversed_text = text_without_space.split('').reverse().join('');
+        if (text_without_space === reversed_text){
+            return "es un palindromo"
+        }else{
+            return "no es un palindromo"
+        }
+    
+}
+console.log(find_palindrome("Roma ni se conoce sin oro ni se conoce sin amor"));
+    console.log(find_palindrome("Anita lava la tina")); 
+    console.log(find_palindrome("Esto no es un palíndromo"));
+</script>
+</html>
