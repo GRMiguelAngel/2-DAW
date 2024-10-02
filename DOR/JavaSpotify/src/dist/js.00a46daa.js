@@ -136,12 +136,15 @@ var Song = exports.default = /*#__PURE__*/_createClass(function Song(k_song, v_s
   this.element = document.querySelector(k_song);
   this.audio = new Audio(v_song);
   this.album = document.querySelector(c_song);
+  this.vinyl = this.element.querySelector(".vinyl");
 });
 function play_song(song) {
   song.element.onclick = function () {
     if (song.audio.paused) {
+      song.vinyl.style.transform = "translate(200px)";
       song.audio.play();
     } else {
+      song.vinyl.style.transform = "translate(0px)";
       song.audio.pause();
     }
   };
@@ -176,7 +179,8 @@ var Player = exports.default = /*#__PURE__*/_createClass(function Player(map) {
     var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
       key = _Object$entries$_i[0],
       value = _Object$entries$_i[1];
-    var song = new _songs.default(key, value);
+    var s_cover = ".cv".concat(aux);
+    var song = new _songs.default(key, value, s_cover);
     (0, _songs.play_song)(song);
     aux++;
   }
@@ -234,7 +238,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44889" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40259" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
