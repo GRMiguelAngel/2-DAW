@@ -55,26 +55,21 @@ export class PokemonController {
   }
 
   async pokemonsFiltering() {
-    this.pokemonsFiltered = [];   
+    this.pokemonsFiltered = [];
+    
     this.model.pokemons.forEach((pkm) => {
-      this.safePokemon = true;
+      const firstTypeCondition = pkm.pkm_type[0].type.name.includes(this.filterType.value);
+      const secondTypeCondition = pkm.pkm_type.length > 1 && pkm.pkm_type[1].type.name.includes(this.filterType.value);
+      const weightCondition = pkm.weight.toString().includes(this.filterWeight.value);
+      const powerCondition = pkm.attack.toString().includes(this.filterTotalPower.value);
 
-      if (!pkm.pkm_type[0].type.name.includes(this.filterType.value)) {
-        this.safePokemon = false;
-      } else if (
-        pkm.pkm_type.length <= 1 &&
-        !pkm.pkm_type[1].type.name.includes(this.filterType.value)
-      ) {
-        this.safePokemon = false;
-      } else if (!pkm.weight.toString().includes(this.filterWeight.value)) {
-        this.safePokemon = false;
-      } else if (!pkm.attack.toString().includes(this.filterTotalPower.value)) {
-        this.safePokemon = false;
-      }
-      if (this.safePokemon) {
+  
+      if ((firstTypeCondition || secondTypeCondition) && weightCondition && powerCondition) {
         this.pokemonsFiltered.push(pkm);
       }
     });
+  
+    console.log(this.pokemonsFiltered);
     this.view.displayPokemons(this.pokemonsFiltered);
   }
 
