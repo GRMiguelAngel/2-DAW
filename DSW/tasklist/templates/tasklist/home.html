@@ -1,0 +1,16 @@
+{% extends "tasklist/base.html" %}
+
+{% block title %}Tasklist | Home{% endblock title %}
+
+{% block body %}
+  <h1>Tasklist</h1>
+  <p>
+    Total tasks: <strong>{{ num_tasks }}</strong> task{{ num_tasks|pluralize }}
+  {% for task in tasks %}
+    <div class="task-box">
+      <h3><a href="{% url 'tasklist:task_detail' task.slug %}">{{ task.title }}</a></h3>
+      <p>{{ task.content|truncatechars:50 }}</p>
+      <div class="task-deadline">Fecha limite: {{ task.deadline }}</div>
+    </div>
+  {% endfor %}
+{% endblock body %}
