@@ -1,0 +1,18 @@
+.front {
+    height: 582px;
+    width: 308px;
+    border: 3px solid #C7AB6C;
+}
+
+#all_champions {
+    scale: 90%;
+    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.name {
+    background-color: #0A1428;
+    color: #FFFFFF;
+}
+/* border-color: #C7AB6C; */
