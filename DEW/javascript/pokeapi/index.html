@@ -1,57 +1,62 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pokemon Shop</title>
-    <link rel="stylesheet" type="text/css" href="style/index.css"/>
-    <script  type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/cookies/cookieconsent.min.js"></script>
-    <script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/cookies/cauce_cookie.js"></script>
-    <script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/estadisticasweb/scripts/piwik-base.js"></script>
-    <script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/estadisticasweb/scripts/piwik-eforma.js"></script>
+        <title>Pokedex</title>
+        <link rel="icon" href="assets/images/pokeball.png" type="image/png">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        <header id="main-header">
-            <div>
-                <h1 id="header-title">Tienda Pokemon</h1>
-            </div>
-        </header>
+        <div class="header">
+            <img src="assets/images/logo.png" class="logo">
+        </div>
         <div class="body">
-            <button id="button" class="button">Let's go</button>
+            <button id="button" class="letsgo">Let's go!</button>
         </div>
-        <div>
-            <input type="text" id="filtro" class="input" placeholder="Buscar por tipo...">
-            <input type="text" id="filtro" class="input" placeholder="Buscar por generación...">
-            <input type="text" id="filtro" class="input" placeholder="Buscar por Poder Total...">
+        <div class="filterButtons">
+            <input type="text" id="filtroTipo" class="input"
+                placeholder="Buscar por tipo...">
+            <input type="text" id="filtroPeso" class="input"
+                placeholder="Buscar por peso..">
+            <input type="text" id="filtroPoderTotal" class="input"
+                placeholder="Buscar por Poder Total...">
         </div>
-        <div>
-            <input type="button" id="btn_lista_deseo" class="button_menu" value="Añadir a lista de deseos" />
-            <input type="button" id="btn_lista_deseo" class="button_menu" value="Ver lista de deseos" />
-            <input type="button" id="btn_lista_deseo" class="button_menu" value="Comprar" />
-            <input type="button" id="btn_lista_deseo" class="button_menu" value="Ver compra"/>
+        <div class="menuButtons">
+            <input type="button" id="btnAgnadeListaDeseo" class="btnMenu"
+                value="Añadir a lista de deseos" />
+            <input type="button" id="btnVerLista" class="btnMenu"
+                value="Ver lista de deseos" />
+            <input type="button" id="btnComprar" class="btnMenu"
+                value="Comprar" />
+            <input type="button" id="btnVerCompra" class="btnMenu"
+                value="Ver compra" />
         </div>
-        <!-- La siguiente lista se puebla con los datos de la API Pokemon -->
-		<!-- Se puede sustituir la lista ul un div contenedor y dentro poner 
-		      div por cada tarjeta Pokemon y con CSS cuadrar la alineacion -->
-		<!-- Habrá que hacer paginación o simular Carrusel con CSS con dos flechas
-               a los lados del contanier y con Javascript recoger el evento click
-               y mostrar siguiente pafinción -->
-        <!-- ToDo: Eliminar el punto de lista con CSS -->
-		<div class="lista_pokemon">
-            <h2 class="loading_datum">Cargando datos...</h2>
-			<ul id="items">
-				<li class>
-					<input type="radio" value="Item 1">
-					<label for="html">Pokemon 1</label><br>
-				</input>
-			</li>
-			<li class>
-				<input type="radio" value="Item 1">
-				<label for="html">Pokemon 2</label><br>
-			</input>
-				</li>
-			</ul>
-		</div>
-        <script type="module" src="scripts/script1.js"></script>
+        <div id="pokedex">
+            <p class="cargandoDatos">Cargando datos...</p>
+        </div>
+        <script type="module" src="./src/script.js"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyAvu5e02YsGZ9sXUpSwrU7pLWMXJVTB_aI",
+              authDomain: "pokeapi-5bada.firebaseapp.com",
+              projectId: "pokeapi-5bada",
+              storageBucket: "pokeapi-5bada.appspot.com",
+              messagingSenderId: "1003057443878",
+              appId: "1:1003057443878:web:ef7f7c44a539130ae4e2e7",
+              measurementId: "G-QJ1XQYZ9LB"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+          </script>
     </body>
 </html>

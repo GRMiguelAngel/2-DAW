@@ -15,7 +15,7 @@ export class PokemonModel {
       throw new Error(`Error fetching Pokémon with ID ${id}: ${error}`);
     }
   }
-
+  
   async loadPokemons() {
     for (let i = 1; i <= 151; i++) {
       const pokemon = await this.fetchPokemon(i);

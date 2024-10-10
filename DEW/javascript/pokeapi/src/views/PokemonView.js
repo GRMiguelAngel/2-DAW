@@ -16,7 +16,7 @@ export class PokemonView {
     this.loadingMessage.style.visibility = "hidden";
     this.pokedex.style.visibility = "visible";
   }
-
+  
   showConsole() {
     this.consoleElements.forEach((e) => (e.style.visibility = "visible"));
   }

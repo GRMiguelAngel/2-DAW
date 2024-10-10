@@ -145,7 +145,7 @@ body {
 .filterButtons,
 .menuButtons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .menuButtons {
