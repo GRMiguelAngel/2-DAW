@@ -204,7 +204,7 @@ var showChampions = /*#__PURE__*/function () {
           champs = document.getElementById("all_champions");
           for (_i = 0, _champions = champions; _i < _champions.length; _i++) {
             champion = _champions[_i];
-            champs.innerHTML += "<div class=\"front\">\n                                    <div class=\"name\">".concat(champion.name, ", ").concat(champion.title, "</div>\n                                    <img class=\"image\" src=\"").concat(champion.image, "\">\n                                </div>");
+            champs.innerHTML += "<div class=\"front\">\n                                    <div class=\"name\"><i><b>".concat(champion.name, ", ").concat(champion.title, "</b></i></div>\n                                    <img class=\"image\" src=\"").concat(champion.image, "\">\n                                </div>");
           }
         case 2:
         case "end":
@@ -241,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35339" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36457" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

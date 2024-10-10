@@ -1,26 +1,56 @@
 body {
-    background-image: , url(/background.61b7e8ea.jpg);
-    background-repeat: no-repeat;
-    filter: drop-shadow() ;
+    background: linear-gradient(to left, transparent, rgb(0, 0, 0)), linear-gradient(to right, transparent, rgb(0, 0, 0)), url(/background.61b7e8ea.jpg);
+    background-color: black;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+
 }
 
 .front {
-    height: 582px;
+    height: 610px;
     width: 308px;
+    transition: 0.35s;
+    scale: 86%;
+    filter: grayscale(100%);
     border: 3px solid #C7AB6C;
+    border-radius: 20px;
+}
+
+.front img {
+    border-radius: 0px 0px 20px 20px;
+}
+
+.front:hover {
+    filter: grayscale(0%);
+    scale: 100%;
 }
 
 #all_champions {
-    scale: 90%;
-    justify-content: space-evenly;
+    justify-content: center;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
 
 .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
     background-color: #0A1428;
     color: #FFFFFF;
+    border-radius: 20px 20px 0px 0px;
 }
 /* border-color: #C7AB6C; */
+
+.logo {
+    display: flex;
+    margin: auto;
+    height: 500px;
+    width: auto;
+}
+
+.header {
+    background: linear-gradient(to bottom, transparent, rgb(0, 0, 0));
+    height: 1100px;
+}
 
 /*# sourceMappingURL=/styles.6145e9cd.css.map */

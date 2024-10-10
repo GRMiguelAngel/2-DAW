@@ -22,7 +22,7 @@ const showChampions = async () => {
     for(let champion of champions) {
 
         champs.innerHTML +=    `<div class="front">
-                                    <div class="name">${champion.name}, ${champion.title}</div>
+                                    <div class="name"><i><b>${champion.name}, ${champion.title}</b></i></div>
                                     <img class="image" src="${champion.image}">
                                 </div>`
     }
