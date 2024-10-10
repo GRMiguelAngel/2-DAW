@@ -1,3 +1,9 @@
+body {
+    background-image: , url(/background.61b7e8ea.jpg);
+    background-repeat: no-repeat;
+    filter: drop-shadow() ;
+}
+
 .front {
     height: 582px;
     width: 308px;
