@@ -27,13 +27,17 @@ const showChampions = async () => {
         <img class="image" src="${champion.image}">
         </div>
         <div class="detail">
-            <button class="button" id="close" type="button" onclick=${close_detail()}>Cerrar</button>
-            ${champion.blurd}
+            <button class="button" id="close" type="button"}>Cerrar</button><br>
+
+            ${champion.blurb}
         </div>
         `
-        console.log(champion.blurd)
+    };
+    const closeButtons = document.querySelectorAll('.button');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', close_detail)
+    });
         show_detail()
         aux++;
-    }
 }
 

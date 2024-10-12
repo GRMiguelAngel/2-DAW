@@ -4,12 +4,17 @@ export function show_detail() {
     fronts.forEach(front => {
         front.onclick = () => {
             let detail = front.nextElementSibling;
-            detail.style.display = 'block';
+            if (detail.style.display === 'none' ||  detail.style.display === '') {
+
+                detail.style.display = 'block';
+            } else {
+                detail.style.display = 'none';
+            }
         };
     });
 }
 
-export function close_detail(){
+export function close_detail() {
     let details = document.querySelectorAll(".detail");
     details.forEach(detail => {
         detail.style.display = 'none';
