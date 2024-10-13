@@ -47,6 +47,7 @@ body {
     margin-top: 200px;
     height: 500px;
     width: auto;
+    animation: visible 2s;
 }
 
 .header {
@@ -55,21 +56,63 @@ body {
 }
 
 .detail {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
     height: 80%;
     width: 80%;
-    background-color:  white;
     display: none;
     position: fixed;
     top: 10%;
     left: 10%;
     z-index: 1;
     border-radius: 20px;
+    border: 3px solid #C7AB6C;
+    background-color: black;
+    animation: extension 1s;
+    opacity: 100%;
+}
 
-    
+.detail_image {
+    position: absolute;
+    top: 60px;
+    right: 70px;
+}
+
+.champ_info {
+    margin-left: 25px;
+    margin-right: 25%;
 }
 
 #close {
-    display: flex;
+    position: absolute;
+    top: 0px;
     right: 0px;
-    left: auto;
+    height: 40px;
+    width: 60px;
+    border-radius: 0px 17px 0px 10px;
+    border: 0px;
+    background-color:  #C7AB6C;
+
+}
+
+@keyframes extension {
+    from {
+      width: 0%;
+      opacity: 0%;
+    }
+  
+    to {
+      width: 80%;
+      opacity: 100%;
+    }
+  }
+
+@keyframes visible {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
 }
