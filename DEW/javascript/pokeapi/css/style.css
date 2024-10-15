@@ -10,14 +10,16 @@ body {
 }
 
 .header {
-  /*font-family: DejaVu Sans Mono, monospace;
-    color: white;*/
   text-align: center;
 }
 
 .logo {
   width: 600px;
   height: 200px;
+}
+
+#login {
+  right: 0px;
 }
 
 .button {
