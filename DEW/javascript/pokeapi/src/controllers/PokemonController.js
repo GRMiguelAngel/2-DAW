@@ -46,13 +46,30 @@ export class PokemonController {
     // Bind Cards pokemons
     this.cardPokemons = document.querySelectorAll(".card");
     this.cardPokemons.forEach((card) => {
-      card.addEventListener("click", () => this.pokemonsClicked(card.id));
+      let cardId = card.id;
+      card.addEventListener("click", function(event){
+        if (this.newDesireList.includes(cardId)){
+          this.pokemonDelete(cardId, card);
+        }  else {
+          this.pokemonPush(cardId, card);
+        }
+      }.bind(this)
+      );
     });
   }
 
-  pokemonsClicked(cardId) {
+  pokemonDelete(cardId, card) {
+    let card_index = this.newDesireList.indexOf(cardId);
+    this.newDesireList.splice(card_index, 1);
+    console.log(this.newDesireList);
+    card.style.border = '2px solid rgb(78, 78, 78)';
+  }
+  
+  pokemonPush(cardId, card) {
     this.newDesireList.push(cardId);
     console.log(this.newDesireList);
+    card.style.border = '2px solid red';
+
   }
 
   async pokemonsFiltering() {

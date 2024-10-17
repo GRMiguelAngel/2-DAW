@@ -34,6 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 50px;
     background-color: #0A1428;
     color: #FFFFFF;
@@ -89,7 +90,7 @@ body {
     right: 0px;
     height: 40px;
     width: 60px;
-    border-radius: 0px 17px 0px 10px;
+    border-radius: 0px 15px 0px 10px;
     border: 0px;
     background-color:  #C7AB6C;
 

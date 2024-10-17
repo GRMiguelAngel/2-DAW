@@ -1,0 +1,114 @@
+body {
+  background: linear-gradient(to left, #0000, #000) no-repeat, linear-gradient(to right, #0000, #000) no-repeat, #000 url("background.3392bf41.jpg") no-repeat;
+}
+
+.front {
+  filter: grayscale();
+  border: 3px solid #c7ab6c;
+  border-radius: 20px;
+  width: 308px;
+  height: 610px;
+  transition: all .35s;
+  scale: 86%;
+}
+
+.front img {
+  border-radius: 0 0 20px 20px;
+}
+
+.front:hover {
+  filter: grayscale(0%);
+  scale: 100%;
+}
+
+#all_champions {
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  display: grid;
+}
+
+.name {
+  text-align: center;
+  color: #fff;
+  background-color: #0a1428;
+  border-radius: 20px 20px 0 0;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  display: flex;
+}
+
+.logo {
+  width: auto;
+  height: 500px;
+  margin: 200px auto auto;
+  animation: 2s visible;
+  display: flex;
+}
+
+.header {
+  background: linear-gradient(#0000, #000);
+  height: 890px;
+}
+
+.detail {
+  color: #fff;
+  z-index: 1;
+  opacity: 1;
+  background-color: #000;
+  border: 3px solid #c7ab6c;
+  border-radius: 20px;
+  width: 80%;
+  height: 80%;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  animation: 1s extension;
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+}
+
+.detail_image {
+  position: absolute;
+  top: 60px;
+  right: 70px;
+}
+
+.champ_info {
+  margin-left: 25px;
+  margin-right: 25%;
+}
+
+#close {
+  background-color: #c7ab6c;
+  border: 0;
+  border-radius: 0 15px 0 10px;
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@keyframes extension {
+  from {
+    opacity: 0;
+    width: 0%;
+  }
+
+  to {
+    opacity: 1;
+    width: 80%;
+  }
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=index.ebeadb08.css.map */
