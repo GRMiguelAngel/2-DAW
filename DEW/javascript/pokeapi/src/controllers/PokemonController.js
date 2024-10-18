@@ -44,31 +44,33 @@ export class PokemonController {
       .addEventListener("click", this.mostrarListaDeseo.bind(this));
 
     // Bind Cards pokemons
+    this.currentSelectedPokemons =  [];
+    
     this.cardPokemons = document.querySelectorAll(".card");
     this.cardPokemons.forEach((card) => {
       let cardId = card.id;
       card.addEventListener("click", function(event){
-        if (this.newDesireList.includes(cardId)){
-          this.pokemonDelete(cardId, card);
+        if (this.currentSelectedPokemons.includes(cardId)){
+          this.deletePokemon(cardId, card);
         }  else {
-          this.pokemonPush(cardId, card);
+          this.pushPokemon(cardId, card);
         }
       }.bind(this)
       );
     });
   }
 
-  pokemonDelete(cardId, card) {
-    let card_index = this.newDesireList.indexOf(cardId);
-    this.newDesireList.splice(card_index, 1);
-    console.log(this.newDesireList);
-    card.style.border = '2px solid rgb(78, 78, 78)';
+  deletePokemon(cardId, card) {
+    let card_index = this.currentSelectedPokemons.indexOf(cardId);
+    this.currentSelectedPokemons.splice(card_index, 1);
+    console.log(this.currentSelectedPokemons);
+    card.classList.remove("selected");
   }
   
-  pokemonPush(cardId, card) {
-    this.newDesireList.push(cardId);
-    console.log(this.newDesireList);
-    card.style.border = '2px solid red';
+  pushPokemon(cardId, card) {
+    this.currentSelectedPokemons.push(cardId);
+    console.log(this.currentSelectedPokemons);
+    card.classList.add('selected');
 
   }
 
@@ -94,17 +96,30 @@ export class PokemonController {
   mostrarListaDeseo() {
     //console.log(this.newDesireList);
     let txt = "¿Quieres añadir los siguientes Pokemons a la Lista de Deseo?";
-    this.newDesireList.forEach((pkm) => {
+    this.currentSelectedPokemons.forEach((pkm) => {
       txt = txt + " " + pkm;
     });
 
     if (window.confirm(txt)) {
       // ToDo Guardar en BBDD
       console.log("Guardando nueva lista de deseo...");
+      this.currentSelectedPokemons.forEach((pkm) => {
+        if (!this.newDesireList.includes(pkm)){
+          this.newDesireList.push(pkm);
+        }
+      });
+      console.log(this.newDesireList);
+
     } else if (window.confirm("¿Quieres deseleccionar los pokemons?")) {
       // ToDo desmarcar pokemons
+      this.cardPokemons = document.querySelectorAll(".card");
+      this.currentSelectedPokemons.forEach(pkm => {
+        pkm.classList.remove('selected');
+      });
+      this.currentSelectedPokemons = [];
 
-      this.newDesireList = [];
+      };
+      console.log(this.currentSelectedPokemons);
     }
   }
-}
+

@@ -180,3 +180,7 @@ body {
   font: bold;
   background-image: linear-gradient(rgb(169, 248, 218), rgb(0, 255, 115));
 }
+
+.card.selected {
+  border: 2px solid red;
+}
