@@ -1,3 +1,27 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAvu5e02YsGZ9sXUpSwrU7pLWMXJVTB_aI",
+  authDomain: "pokeapi-5bada.firebaseapp.com",
+  projectId: "pokeapi-5bada",
+  storageBucket: "pokeapi-5bada.appspot.com",
+  messagingSenderId: "1003057443878",
+  appId: "1:1003057443878:web:ef7f7c44a539130ae4e2e7",
+  measurementId: "G-QJ1XQYZ9LB"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 // Expresión regular para validar email
 const emailPattern = /.+@.+\..+/;
 
@@ -24,35 +48,39 @@ function validateLogin() {
     return false;
   }
 
+  const submit = document.getElementsByClassName('btn-primary');
+  submit.addEventListener('click', function(event){
+    event.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+      alert('Creando cuenta...')
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    })
+      // ..
+    });
+
   return true;
 }
 
 function validateRegister() {
-  const name = document.getElementById("name").value;
-  const apellidos = document.getElementById("fullName").value;
+  const username = document.getElementById("registerUsername").value;
   const email = document.getElementById("email").value;
-  const edad = document.getElementById("age").value;
   const password = document.getElementById("registerPassword").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
 
-  // Limito longitud del campo name
-  if (name.length >= 10) {
+  // Limito longitud del campo username
+  if (username.length >= 10) {
     alert("El nombre es muy largo.");
     return false;
   }
-
-  // Limito longitud del campo apellidos
-  if (apellidos.length >= 40) {
-    alert("La longitud del apellido es muy larga.");
-    return false;
-  }
-
-  // Limito longitud del campo edad
-  if (edad.length == 2) {
-    alert("La longitud de la edad no es correcta.");
-    return false;
-  }
-
+  
   // Compruebo el formato del correo
   if (!emailPattern.test(email)) {
     alert("Por favor, introduce un correo electrónico válido.");
@@ -73,5 +101,25 @@ function validateRegister() {
     return false;
   }
 
+  const submit = document.getElementsByClassName('btn-primary');
+  submit.addEventListener('click', function(event){
+    event.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+      alert('Creando cuenta...')
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    })
+      // ..
+    });
+
   return true;
+  
 }
+
