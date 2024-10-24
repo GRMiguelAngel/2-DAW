@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,7 +20,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 // Expresión regular para validar email
 const emailPattern = /.+@.+\..+/;
@@ -48,26 +47,29 @@ function validateLogin() {
     return false;
   }
 
-  const submit = document.getElementsByClassName('btn-primary');
-  submit.addEventListener('click', function(event){
-    event.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed up 
-      const user = userCredential.user;
-      alert('Creando cuenta...')
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorMessage);
-    })
-      // ..
-    });
-
+  
   return true;
 }
+const Lsubmit = document.getElementById('btn-login');
+  Lsubmit.addEventListener('click',function(event){
+    event.preventDefault()
+    const auth = getAuth();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    alert('Iniciando sesión...')
+    window.location.href ="../index.html"
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+  });
+
+  })
 
 function validateRegister() {
   const username = document.getElementById("registerUsername").value;
@@ -101,25 +103,28 @@ function validateRegister() {
     return false;
   }
 
-  const submit = document.getElementsByClassName('btn-primary');
-  submit.addEventListener('click', function(event){
-    event.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed up 
-      const user = userCredential.user;
-      alert('Creando cuenta...')
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorMessage);
-    })
-      // ..
-    });
+ 
 
   return true;
   
 }
+const submit = document.getElementById('btn-register');
+  submit.addEventListener('click',function(event){
+    event.preventDefault()
+    const auth = getAuth();
+  const email = document.getElementById('registerEmail').value;
+  const password = document.getElementById('registerPassword').value;
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    alert('creado cuenta')
+    console.log( window.location.href);
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+  });
 
+  })

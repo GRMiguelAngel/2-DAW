@@ -1,0 +1,35 @@
+.col {
+    border: 2px solid white;
+}
+
+.columna1 {
+    height: 100px;
+    background-color: greenyellow;
+}
+
+.columna2 {
+    background-color: violet;
+}
+
+.columna3 {
+    height: 100px;
+    background-color: blueviolet;
+
+}
+
+.columna4 {
+    height: 100px;
+    background-color: paleturquoise;
+
+}
+
+.columna5 {
+    height: 100px;
+    background-color: salmon;
+
+}
+
+.columna6 {
+    height: 50px;
+    background-color: greenyellow;
+}
