@@ -8,6 +8,7 @@ export class PokemonController {
 
     this.pokemonsFiltered = [];
     this.newDesireList = [];
+    this.basket = [];
 
     // Bind button event
     document
@@ -47,6 +48,15 @@ export class PokemonController {
     document
     .querySelector("#btnVerLista")
     .addEventListener("click", this.verListaDeseo.bind(this));
+    
+    document
+    .querySelector("#btnVerCesta")
+    .addEventListener("click", this.verCesta.bind(this));
+
+    document
+    .querySelector("#btnAñadirCesta")
+    .addEventListener("click", this.añadirCesta.bind(this));
+
 
     // Bind Cards pokemons
     this.currentSelectedPokemons =  [];
@@ -57,10 +67,8 @@ export class PokemonController {
       card.addEventListener("click", function(event){
         if (this.currentSelectedPokemons.includes(currentPokemonId)){
           this.deletePokemon(currentPokemonId, card);
-          console.log(this.model.pokemons[index].name)
         }  else {
           this.pushPokemon(currentPokemonId, card);
-          console.log(this.model.pokemons[index].name)
         }
       }.bind(this)
       );
@@ -70,13 +78,11 @@ export class PokemonController {
   deletePokemon(currentPokemonId, card) {
     let card_index = this.currentSelectedPokemons.indexOf(currentPokemonId);
     this.currentSelectedPokemons.splice(card_index, 1);
-    console.log(this.currentSelectedPokemons);
     card.classList.remove("selected");
   }
   
   pushPokemon(currentPokemonId, card) {
     this.currentSelectedPokemons.push(currentPokemonId);
-    console.log(this.currentSelectedPokemons);
     card.classList.add('selected');
 
   }
@@ -96,9 +102,34 @@ export class PokemonController {
       }
     });
   
-    console.log(this.pokemonsFiltered);
     this.view.displayPokemons(this.pokemonsFiltered);
   }
+
+  verCesta() {
+    let pokemonNames = [];
+    this.newDesireList.forEach(pkmId => {
+      let pokemonName = this.model.pokemons.find(pkm => pkm.id == pkmId).name;
+      pokemonNames.push(pokemonName);
+    });
+    alert("Cesta:\n" + pokemonNames.join("\n"));
+    }
+
+    añadirCesta() {
+      let txt = "¿Quieres añadir los siguientes Pokemons a la cesta?";
+      this.currentSelectedPokemons.forEach((pkmId) => {
+        let pokemon = this.model.pokemons.find(pkm => pkm.id == pkmId);
+        txt = txt + "\n " + pokemon.name;
+        if (window.confirm(txt)) {
+          // ToDo Guardar en BBDD
+          console.log("Guardando pokemons en la cesta...");
+          this.currentSelectedPokemons.forEach((pkm) => {
+            if (!this.basket.includes(pkm)){
+              this.newDesireList.push(pkm);
+            }
+          });
+        }
+      });
+    }
 
   verListaDeseo() {
     let pokemonNames = [];
@@ -110,7 +141,6 @@ export class PokemonController {
   }
 
   añadirListaDeseo() {
-    //console.log(this.newDesireList);
     let txt = "¿Quieres añadir los siguientes Pokemons a la Lista de Deseo?";
     this.currentSelectedPokemons.forEach((pkmId) => {
       let pokemon = this.model.pokemons.find(pkm => pkm.id == pkmId);
@@ -125,18 +155,15 @@ export class PokemonController {
           this.newDesireList.push(pkm);
         }
       });
-      console.log(this.newDesireList);
-
-    } else if (window.confirm("¿Quieres deseleccionar los pokemons?")) {
+    }
+    
+    if (window.confirm("¿Quieres deseleccionar los pokemons?")) {
       // ToDo desmarcar pokemons
       this.cardPokemons = document.querySelectorAll(".card");
       this.cardPokemons.forEach(card => {
         card.classList.remove('selected');
       });
       this.currentSelectedPokemons = [];
-
-      };
-      console.log(this.currentSelectedPokemons);
     }
   }
-
+}
