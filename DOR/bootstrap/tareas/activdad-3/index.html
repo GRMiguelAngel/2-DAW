@@ -66,7 +66,7 @@
         <div class="col-lg-2">
           <nav class="navbar">
             <ul class="navbar-nav d-flex flex-row d-lg-block">
-              <li class="nav-item p-2">
+              <li class="nav-item">
                 <a class="nav-link" href="#">Población</a>
               </li>
               <li class="nav-item p-2">
@@ -80,18 +80,21 @@
         </div>
         <div class="col col-lg-10">
           <main class="mt-5">
-            <h1 class="mb-5" id="poblacion">Población por provincias</h1>
+            <h1 class="mb-0" id="poblacion">Población por provincias</h1>
             <div class="row align-items-lg-end">
-            <ul class="nav nav-pills mb-3">
-              <li class="nav-item col-6">
-                <button class="w-100 nav-link active">Santa Cruz de Tenerife</button>
-              </li>
-              <li class="nav-item col-6">
-                <button class="w-100 nav-link" onclick="">Las Palmas</button>
-              </li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane fade show active">
+              <ul class="nav nav-pills mb-3">
+                <li class="nav-item col-6">
+                  <p>
+                    Santa Cruz de Tenerife
+                  </p>
+                </li>
+                <li class="nav-item col-6">
+                  <button class="w-100 nav-link">Las Palmas</button>
+                </li>
+              </ul>
+            </div>
+            <div class="row align-items-lg-end">  
+              <div class="col-lg-6 tab-pane fade show active">
                 <ul class="list-group">
                   <li class="list-group-item list-group-item-action fw-bolder d-flex justify-content-between align-items-center">
                     Tenerife<span class="badge bg-primary">966.354</span>
@@ -107,22 +110,21 @@
                   </li>
                 </ul>
               </div>
-              <div class="tab-pane fade">
-                <div class="btn-group-vertical w-100">
-                  <button type="button" class="btn btn-outline-secondary d-flex justify-content-between align-items-center">
-                    Gran Canaria<span class="badge rounded-pill bg-info">870.595</span>
-                  </button>
-                  <button type="button" class="btn btn-outline-secondary d-flex justify-content-between align-items-center">
-                    Lanzarote<span class="badge rounded-pill bg-info">154.530</span>
-                  </button>
-                  <button type="button" class="btn btn-outline-secondary d-flex justify-content-between align-items-center">
-                    Fuerteventura<span class="badge rounded-pill bg-info">126.227</span>
-                  </button>
-                  <button type="button" class="btn btn-outline-secondary d-flex justify-content-between align-items-center">
-                    La Graciosa<span class="badge rounded-pill bg-info">734</span>
-                  </button>
-                </div>
-              </div>
+              <div class="col-lg-6 tab-pane fade show active">
+                <ul class="list-group">
+                  <li class="list-group-item list-group-item-action fw-bolder d-flex justify-content-between align-items-center">
+                    Gran Canaria<span class="badge bg-info rounded-pill">870.595</span>
+                  </li>
+                  <li class="list-group-item list-group-item-action fw-bolder d-flex justify-content-between align-items-center">
+                    Lanzarote<span class="badge bg-info rounded-pill">154.530</span>
+                  </li>
+                  <li class="list-group-item list-group-item-action fw-bolder d-flex justify-content-between align-items-center">
+                    Fuerteventura<span class="badge bg-info rounded-pill">126.227</span>
+                  </li>
+                  <li class="list-group-item list-group-item-action fw-bolder d-flex justify-content-between align-items-center">
+                    La Graciosa<span class="badge bg-info rounded-pill">734</span>
+                  </li>
+                </ul>
             </div>
           </main>
           <section class="mt-5">
