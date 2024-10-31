@@ -119,16 +119,17 @@ export class PokemonController {
       this.currentSelectedPokemons.forEach((pkmId) => {
         let pokemon = this.model.pokemons.find(pkm => pkm.id == pkmId);
         txt = txt + "\n " + pokemon.name;
-        if (window.confirm(txt)) {
-          // ToDo Guardar en BBDD
-          console.log("Guardando pokemons en la cesta...");
-          this.currentSelectedPokemons.forEach((pkm) => {
-            if (!this.basket.includes(pkm)){
-              this.newDesireList.push(pkm);
-            }
-          });
-        }
       });
+
+      if (window.confirm(txt)) {
+        // ToDo Guardar en BBDD
+        console.log("Guardando pokemons en la cesta...");
+        this.currentSelectedPokemons.forEach((pkm) => {
+          if (!this.basket.includes(pkm)){
+            this.basket.push(pkm);
+          }
+      });
+      }
     }
 
   verListaDeseo() {
