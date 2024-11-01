@@ -1,64 +1,59 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import DBConnection from "./models/dbconnection.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+const database = new DBConnection()
+const loginButton = document.getElementById("login-button");
+const signupButton = document.getElementById("btnRegister");
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAvu5e02YsGZ9sXUpSwrU7pLWMXJVTB_aI",
-  authDomain: "pokeapi-5bada.firebaseapp.com",
-  projectId: "pokeapi-5bada",
-  storageBucket: "pokeapi-5bada.appspot.com",
-  messagingSenderId: "1003057443878",
-  appId: "1:1003057443878:web:ef7f7c44a539130ae4e2e7",
-  measurementId: "G-QJ1XQYZ9LB"
-};
+loginButton.addEventListener("click", login);
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+signupButton.addEventListener("click", register);
 
-const Lsubmit = document.getElementById('btn-login');
-  Lsubmit.addEventListener('click',function(event){
-    event.preventDefault()
-    const auth = getAuth();
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    alert('Iniciando sesión...')
-    window.location.href ="../index.html"
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage)
-  });
+async function login() {
+    const inputUsername = document.getElementById("loginEmail").value;
+    const inputPassword = document.getElementById("loginPassword").value;
 
-  })
+    const allUsers = await database.readAll()
 
-const submit = document.getElementById('btn-register');
-  submit.addEventListener('click',function(event){
-    event.preventDefault()
-    const auth = getAuth();
-  const email = document.getElementById('registerEmail').value;
-  const password = document.getElementById('registerPassword').value;
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    alert('creado cuenta')
-    console.log( window.location.href);
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage)
-  });
+    for (const user of allUsers) {
+        console.log(user)
+        if (user["name"] == inputUsername && user["password"] == inputPassword) {
+            window.open(`index.html?id=${user["id"]}`)
+            
+            return
+        }
+    }
+}
 
-  })
+async function register() {
+    const inputUsername = document.getElementById("signup-username").value
+    const inputPassword = document.getElementById("signup-password").value
+    const repeatPassword = document.getElementById("signup-r-password").value
+
+    const allUsers = await database.readAll()
+
+    for (const user of allUsers) {
+        if (user["name"] == inputUsername) {
+            alert("Error: Username already used! Please use another username...")
+            return
+        }
+    } 
+
+    if (inputPassword == repeatPassword) {
+        const data = {
+            name: inputUsername,
+            password: inputPassword,
+            money: 10000,
+            wishlist: [],
+            inventory: [],
+            basket: []
+        }
+        await database.create(data)
+        alert(`New user ${inputUsername} created! Please login into the shop...`)
+    } else {
+        alert("Password don't matches!")
+    }
+}
+
+signupButton.addEventListener("click", function(e) {
+
+});

@@ -107,7 +107,7 @@ export class PokemonController {
 
   verCesta() {
     let pokemonNames = [];
-    this.newDesireList.forEach(pkmId => {
+    this.basket.forEach(pkmId => {
       let pokemonName = this.model.pokemons.find(pkm => pkm.id == pkmId).name;
       pokemonNames.push(pokemonName);
     });
