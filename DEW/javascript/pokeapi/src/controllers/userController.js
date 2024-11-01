@@ -1,4 +1,4 @@
-import DBConnection from "../models/dbconnection.js";
+import DBConnection from "../models/conect_firestone.js";
 
 export default class UserController {
     constructor() {
@@ -6,10 +6,9 @@ export default class UserController {
         this.id;
         this.name;
         this.password;
-        this.money;
-        this.inventory;
-        this.shoppingCart;
-        this.wishlist;
+        this.balance;
+        this.acquiredPokemons;
+        this.basket;
     }
 
     async fetchData(id) {
@@ -17,31 +16,26 @@ export default class UserController {
         for (let user of allUsers) {
             if (user["id"] == id) {
                 this.id = user["id"]
-                this.name = user["name"];
+                this.email = user["email"];
                 this.password = user["password"];
-                this.money = user["money"];
-                this.inventory = user["inventory"];
+                this.balance = user["balance"];
                 this.basket = user["basket"];
-                this.wishlist = user["wishlist"];
+                this.acquiredPokemons = user["acquiredPokemons"];
                 return
             }
         }
-    }
-
-    async updateWishlist() {
-        await this.database.update(this.id, {wishlist: this.wishlist})
     }
 
     async updateBasket() {
         await this.database.update(this.id, {basket: this.basket})
     }
 
-    async updateMoney() {
-        await this.database.update(this.id, {money: this.money})
+    async updateBalance() {
+        await this.database.update(this.id, {balance: this.balance})
     }
 
-    async updateInventory() {
-        await this.database.update(this.id, {inventory: this.inventory})
+    async updateacquiredPokemons() {
+        await this.database.update(this.id, {acquiredPokemons: this.acquiredPokemons})
     }
 
     printData() {

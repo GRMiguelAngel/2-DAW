@@ -1,10 +1,30 @@
-
 import { PokemonModel } from "../models/PokemonModel.js";
 import { PokemonView } from "../views/PokemonView.js";
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
+import UserController from "./userController.js";
+import DBConnection from "../models/conect_firestone.js";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAIh-sSbpaYw5nxq179jV6KvLRDoWdhUrE",
+  authDomain: "poketienda-d85bb.firebaseapp.com",
+  projectId: "poketienda-d85bb",
+  storageBucket: "poketienda-d85bb.firebasestorage.app",
+  messagingSenderId: "215068258062",
+  appId: "1:215068258062:web:20cf6f086b7672372d715f"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 export class PokemonController {
   constructor() {
     this.model = new PokemonModel();
     this.view = new PokemonView();
+    this.user = new UserController();
+    this.database = new DBConnection();
+    this.userid = window.location.search.substring(4);
+    this.user.fetchData(this.userid);
 
     this.pokemonsFiltered = [];
     this.newDesireList = [];
@@ -45,17 +65,13 @@ export class PokemonController {
       .addEventListener("click", this.añadirListaDeseo.bind(this));
 
     // Bind ver Lista de deseos
-    document
-    .querySelector("#btnVerLista")
-    .addEventListener("click", this.verListaDeseo.bind(this));
+    document.querySelector("#btnVerLista").addEventListener("click", this.verListaDeseo.bind(this));
     
-    document
-    .querySelector("#btnVerCesta")
-    .addEventListener("click", this.verCesta.bind(this));
+    document.querySelector("#btnVerCesta").addEventListener("click", this.verCesta.bind(this));
 
-    document
-    .querySelector("#btnAñadirCesta")
-    .addEventListener("click", this.añadirCesta.bind(this));
+    document.querySelector("#btnAñadirCesta").addEventListener("click", this.añadirCesta.bind(this));
+
+    document.querySelector("#btnComprar").addEventListener("click", this.comprar.bind(this));
 
 
     // Bind Cards pokemons
@@ -111,7 +127,7 @@ export class PokemonController {
       let pokemonName = this.model.pokemons.find(pkm => pkm.id == pkmId).name;
       pokemonNames.push(pokemonName);
     });
-    alert("Cesta:\n" + pokemonNames.join("\n"));
+    alert("Cesta:\n" + pokemonNames.join("\n") + `\n\n saldo:${this.user["balance"]}`);
     }
 
     añadirCesta() {
@@ -166,5 +182,29 @@ export class PokemonController {
       });
       this.currentSelectedPokemons = [];
     }
+  }
+  comprar() {
+    let totalPrice = 0;
+    let txt = "¿Quieres comprar los siguientes Pokemons?";
+    this.basket.forEach(pkmId => {
+      let pokemon = this.model.pokemons.find(pkm => pkm.id == pkmId);
+      let pkmPrice = parseFloat(pokemon.price);
+      console.log(pokemon.price);
+      txt +=  "\n " + pokemon.name + ' ' + pkmPrice;
+      totalPrice += pkmPrice;
+    });
+    txt += `\n Precio total: ${totalPrice}`
+    if (window.confirm(txt)) {
+      // ToDo Guardar en BBDD
+      console.log("Comprando pokemons...");
+      this.user.balance -= totalPrice;
+      this.basket.forEach(pkmId => {
+        this.user.acquiredPokemons.push(pkmId)
+        });
+      }
+      this.user.updateacquiredPokemons();
+      this.user.updateBalance();
+      this.user.updateBasket();
+      this.basket = [];
   }
 }
