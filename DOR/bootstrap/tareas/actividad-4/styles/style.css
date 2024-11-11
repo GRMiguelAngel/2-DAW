@@ -1,5 +1,31 @@
+* {
+    color: #EDEDED;
+}
 
+.title {
+    padding-top: 30px;
+}
 
-.column1-navbar{
+main {
+background-color: #363636;
+}
+
+.dababy {
+    filter: drop-shadow(
+        0 5px 50px red,
+    );
+
+}
+
+.logo {
+    border-radius: 200px 1000px 200px 1000px;
+}
+
+.description {
+    padding-top: 100px;
+    margin-left: 50px;
+}
+
+a.navbar-item{
     margin: 10px;
 }
