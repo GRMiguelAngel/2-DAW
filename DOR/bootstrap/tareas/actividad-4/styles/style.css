@@ -1,31 +1,23 @@
 * {
     color: #EDEDED;
-}
-
-.title {
-    padding-top: 30px;
+    box-sizing: border-box;
 }
 
 main {
-background-color: #363636;
-}
-
-.dababy {
-    filter: drop-shadow(
-        0 5px 50px red,
-    );
-
+    background-color: #363636;
 }
 
 .logo {
     border-radius: 200px 1000px 200px 1000px;
 }
 
-.description {
-    padding-top: 100px;
-    margin-left: 50px;
+a.navbar-item {
+    margin: 10px;
 }
 
-a.navbar-item{
-    margin: 10px;
+
+.dababy {
+    width: 100%; /* Asegura que la imagen se ajuste al ancho del contenedor */
+    max-width: 100%; /* También evita que la imagen crezca más allá del contenedor */
+    height: auto;
 }
