@@ -2,8 +2,7 @@
   <section id="about">
     <h2>Sobre mí</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut enim sed
-      justo ultricies elementum.
+      Miguel Ángel
     </p>
   </section>
 </template>
