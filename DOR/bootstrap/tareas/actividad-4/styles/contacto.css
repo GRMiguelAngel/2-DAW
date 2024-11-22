@@ -1,0 +1,16 @@
+* {
+    color: #EDEDED;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: #363636;
+}
+
+.logo {
+    border-radius: 200px 1000px 200px 1000px;
+}
+
+a.navbar-item {
+    margin: 10px;
+}
