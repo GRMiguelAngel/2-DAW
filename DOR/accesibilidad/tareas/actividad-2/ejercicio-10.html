@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones</title>
+    <style>
+        button {
+            background-color: #2c82d9;
+            color: white;
+        }
+
+        #mensaje {
+            padding: 10px;
+            border-radius: 5px;
+            color: #3178c6;
+        }
+    </style>
+    <script>
+        function mostrarMensaje() {
+            const mensajeDiv = document.getElementById('mensaje');
+            mensajeDiv.innerText = '¡Nueva notificación!';
+            mensajeDiv.setAttribute('role', 'alert'); // Define como notificación importante
+            mensajeDiv.setAttribute('aria-live', 'assertive'); // Se lee de inmediato para usuarios de lector de pantalla
+        }
+    </script>
+</head>
+<body>
+    <h1>Página de Notificaciones</h1>
+    <button onclick="mostrarMensaje()" aria-label="Mostrar notificación">Mostrar Notificación</button>
+    <div id="mensaje" aria-live="polite" role="status"></div>
+</body>
+</html>
