@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción</title>
+    <style>
+
+        button {
+            background-color: #297e2a;
+            color: #fff;
+            margin-top: 5px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Formulario de Inscripción</h1>
+    <form action="#" method="post" aria-labelledby="formulario-inscripcion">
+        <div>
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required aria-required="true">
+        </div>
+        <div>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" required aria-required="true">
+        </div>
+        <div>
+            <label for="pais">País</label>
+            <select id="pais" name="pais" required aria-required="true">
+                <option value="" disabled selected>Seleccionar país</option>
+                <option value="mx">México</option>
+                <option value="es">España</option>
+                <option value="co">Colombia</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit" aria-label="Enviar formulario">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>
