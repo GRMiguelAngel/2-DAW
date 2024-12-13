@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mb-4">
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Portafolio</a>
@@ -58,7 +58,6 @@
         </div>
       </nav>
     <!-- Espaciado para evitar que el contenido quede detrás del navbar -->
-      <div class="mt-5 pt-3"></div>
     </div>
   </template>
   <script setup>
@@ -82,7 +81,4 @@
   </script>
   <style scoped>
   /* Ajustar el espaciado superior para el contenido dinámico */
-  .mt-5 {
-  margin-top: 4rem; /* Ajusta el valor según la altura del navbar */
-  }
-  </style>
+    </style>

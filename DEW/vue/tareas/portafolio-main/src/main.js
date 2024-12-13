@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import "./style.css";
 const app = createApp(App);
+import "bootstrap/dist/js/bootstrap.min";
 // Sincroniza el idioma en la URL con i18n
 watchEffect(() => {
 const currentRoute = router.currentRoute.value; // Obtén la ruta actual
