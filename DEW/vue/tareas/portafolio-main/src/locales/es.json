@@ -1,7 +1,38 @@
 {
     "aboutme": "Sobre mí",
-    "projects": "Proyectos",
-    "skills": "Habilidades",
+    "projects": {
+        "title": "Proyectos",
+        "cards": [
+            {
+                "title": "Proyecto 1",
+                "description": "Descripción breve del proyecto 1.",
+                "link": "https://github.com/proyecto1"
+            }
+        ]
+    },
+    "skills": {
+        "title": "Habilidades",
+        "cards": [
+            {
+                "logo": "/images/vue.png",
+                "name": "Vue.js",
+                "description": "He utilizado Vue.js para desarrollar aplicaciones web modernas y reactivas.",
+                "level": 4
+            },
+            {
+                "logo": "/images/javascript.png",
+                "name": "JavaScript",
+                "description": "Experiencia en JavaScript tanto en frontend como en backend.",
+                "level": 5
+            },
+            {
+                "logo": "/images/python.png",
+                "name": "Python",
+                "description": "He usado Python para proyectos de análisis de datos y desarrollo de APIs.",
+                "level": 3
+            }
+        ]
+    },
     "experience": "Experiencia",
     "contact": "Contacto"
 }
