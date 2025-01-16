@@ -1,3 +1,270 @@
-h1 {
-    color: blue;
+/* ejer 1 */
+$primary_color:#333;
+$standard_font_size: 16px;
+
+button {
+    background-color: $primary_color;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: $standard_font_size;
+    
+        &:hover {
+            background-color: #fff;
+            color: $primary_color;
+        }
+}
+
+/* ejer 2 */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    h1 {
+        font-size: 24px;
+        color: $primary_color;
+    }
+    p {
+        font-size: $standard_font_size;
+        color: #666;
+    }
+}
+
+/* ejer 3 */
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    & a {
+        color: $primary_color;
+        text-decoration: none;
+    }
+    & a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* ejer 4 */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    .row {
+        display: flex;
+        justify-content: space-between;
+        .col {
+            width: 30%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-bottom: 20px;
+            }
+    }
+}
+
+/* ejer 5 */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    h1 {
+        font-size: 24px;
+        color: $primary_color;
+    }
+    r p {
+        font-size: $standard_font_size;
+        color: #666;
+    }
+    .btn:hover {
+        background-color: #fff;
+        color: $primary_color;
+    }
+}
+.btn {
+    background-color: $primary_color;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: $standard_font_size;
+}
+
+/* ejer 6 */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    h1 {
+        font-size: 24px;
+        color: $primary_color;
+    }
+    p {
+        font-size: $standard_font_size;
+        color: #666;
+    }
+    .btn {
+        background-color: $primary_color;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: $standard_font_size;
+        &:hover {
+            background-color: #fff;
+            color: $primary_color;
+        }
+    }
+}
+
+/* ejer 7 */
+
+nav ul {
+    display: inline-block;
+    margin-right: 20px;
+    li a {
+        color: $primary_color;
+        text-decoration: none;
+    }
+    & a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* ejer 8 */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    .row {
+        display: flex;
+        justify-content: space-between;
+        .col {
+            width: 30%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+/* ejer 9 */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    h1 {
+        font-size: 24px;
+        color: $primary_color;
+    }
+    p {
+        font-size: $standard_font_size;
+        color: #666;
+    }
+    .btn {
+        background-color: $primary_color;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: $standard_font_size;
+        &:hover {
+            background-color: #fff;
+            color: $primary_color;
+        }
+    }
+}
+
+
+/* ejer 10 */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    h1 {
+        font-size: 24px;
+        color: $primary_color;
+    }
+    p {
+        font-size: $standard_font_size;
+        color: #666;
+    }
+}
+
+/* ejer 11 */
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    a {
+        color: $primary_color;
+        text-decoration: none;
+    }
+}
+ul li a:hover {
+text-decoration: underline;
+}
+
+
+/* ejer 12 */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    .row {
+        display: flex;
+        justify-content: space-between;
+        .col {
+            width: 30%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+/* ejer 13 */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    .btn {
+        background-color: $primary_color;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: $standard_font_size;
+        &:hover {
+            background-color: #fff;
+            color: $primary_color;
+        }
+    }
+}
+
+/* ejer 14 */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    a {
+        display: flex;
+        justify-content:
+        space-between;
+    }
+    .row .col {
+        width: 30%;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-bottom: 20px;
+        &:first-child {
+            background-color:$primary_color;
+            color: #fff;
+        }
+    }
 }

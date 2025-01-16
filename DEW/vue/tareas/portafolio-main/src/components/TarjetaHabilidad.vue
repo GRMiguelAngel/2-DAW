@@ -1,6 +1,5 @@
 <template>
     <div class="tarjeta-habilidad">
-      <img :src="data.logo" :alt="data.name" class="logo" />
       <h3>{{ data.name }}</h3>
       <p>{{ data.description }}</p>
       <div class="nivel">

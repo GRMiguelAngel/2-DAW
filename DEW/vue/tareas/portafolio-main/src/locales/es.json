@@ -4,9 +4,14 @@
         "title": "Proyectos",
         "cards": [
             {
-                "title": "Proyecto 1",
-                "description": "Descripción breve del proyecto 1.",
-                "link": "https://github.com/proyecto1"
+                "title": "Lumino",
+                "description": "Aplicación web de gestión académica",
+                "link": "https://github.com/grmiguelangel/lumino"
+            },
+            {
+                "title": "Infolol",
+                "description": "Wiki de personajes de League of Legends",
+                "link": "https://grmiguelangel.github.io/infolol/"
             }
         ]
     },
@@ -23,13 +28,13 @@
                 "logo": "/images/javascript.png",
                 "name": "JavaScript",
                 "description": "Experiencia en JavaScript tanto en frontend como en backend.",
-                "level": 5
+                "level": 4
             },
             {
                 "logo": "/images/python.png",
                 "name": "Python",
                 "description": "He usado Python para proyectos de análisis de datos y desarrollo de APIs.",
-                "level": 3
+                "level": 5
             }
         ]
     },

@@ -16,8 +16,8 @@
         </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-            <li><button @click="changeLanguage('en')">English</button></li>
-            <li><button @click="changeLanguage('es')">Español</button></li>
+            <li><button class="btn" @click="changeLanguage('en')">English</button></li>
+            <li><button class="btn" @click="changeLanguage('es')">Español</button></li>
             <li class="nav-item">
             <router-link
             class="nav-link"
