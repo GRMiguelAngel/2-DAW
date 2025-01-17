@@ -41,5 +41,27 @@ Instalo php.
 ![](media/instalacion_php.png)
 
 Se activa el modulo apache php8 y reinicia.
-
 ![](media/activacion_modulo.png)
+![](media/reinicio_apache2.png)
+
+Abro el archivo __/var/www/html/info.php__.
+
+![](media/nano_fich.png)
+![](media/codigo_php.png)
+
+Compruebo info.php en el navegador.
+
+![](media/infophp.png)
+
+Instalo __PHP-FPM__.
+
+![](media/install_phpfpm.png)
+
+Habilito __proxy_fcgi__ y __setenvif__.
+
+![](media/avilitar_proxy_setenvif.png)
+
+Reinicio apache2.
+
+![](media/reinicio_apache2_2.png)
+
