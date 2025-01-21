@@ -1,0 +1,16 @@
+header {
+  padding: 10px;
+}
+header .sass_logo {
+  height: 40px;
+  width: 60px;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+}
+
+header {
+  background-color: black;
+}/*# sourceMappingURL=main.css.map */
