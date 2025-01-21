@@ -2,4 +2,6 @@
 
 ## Componente 1
 
-* **Role="alert"**: Este atributo indica que el contenido es una alerta y que debe ser anunciado por los lectores de pantalla.
+* **aria-live="polite"**: Este atributo indica que los cambios en el contenido deben ser anunciados de manera no intrusiva.
+
+* 

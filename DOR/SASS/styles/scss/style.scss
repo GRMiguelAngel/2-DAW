@@ -60,22 +60,22 @@ nav ul li {
             background-color: #f2f2f2;
             padding: 20px;
             margin-bottom: 20px;
-            }
+        }
     }
 }
 
 /* ejer 5 */
 
 .container {
-    width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+        width-max: 1200px;
     
     h1 {
         font-size: 24px;
         color: $primary_color;
     }
-    r p {
+    p {
         font-size: $standard_font_size;
         color: #666;
     }
@@ -121,16 +121,20 @@ nav ul li {
 
 /* ejer 7 */
 
-nav ul {
-    display: inline-block;
-    margin-right: 20px;
-    li a {
-        color: $primary_color;
-        text-decoration: none;
+nav {
+    ul { 
+        li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     }
-    & a:hover {
-        text-decoration: underline;
-    }
+}
+ul li a {
+    color: #333;
+    text-decoration: none;
 }
 
 /* ejer 8 */
@@ -254,8 +258,7 @@ text-decoration: underline;
     margin: 0 auto;
     a {
         display: flex;
-        justify-content:
-        space-between;
+        justify-content: space-between;
     }
     .row .col {
         width: 30%;
