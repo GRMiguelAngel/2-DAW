@@ -1,5 +1,14 @@
 body {
     margin: 0;
-    background-color: $secondary_color;
-    
+    font-size: 30px;
+}
+
+@font-face {
+    font: {
+
+        family: 'Dancing Script';
+        weight: normal;
+        style: normal;
+    }
+    src: url('/Recursos/styles/fonts/DancingScript-VariableFont_wght.ttf') format('truetype');
 }

@@ -1,16 +1,33 @@
 header {
+  background-color: black;
   padding: 10px;
+  font-family: "Dancing Script";
+  color: #CC6698;
+  display: flex;
+  align-content: center;
 }
-header .sass_logo {
+
+.sass_logo {
   height: 40px;
   width: 60px;
 }
 
 body {
   margin: 0;
-  background-color: white;
+  font-size: 30px;
 }
 
-header {
+@font-face {
+  font-family: "Dancing Script";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/Recursos/styles/fonts/DancingScript-VariableFont_wght.ttf") format("truetype");
+}
+main {
+  background-color: white;
+  color: #CC6698;
+  height: 500px;
+}
+main div {
   background-color: black;
 }/*# sourceMappingURL=main.css.map */
