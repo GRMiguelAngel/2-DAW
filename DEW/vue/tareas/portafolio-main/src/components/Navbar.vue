@@ -81,4 +81,4 @@
   </script>
   <style scoped>
   /* Ajustar el espaciado superior para el contenido dinámico */
-    </style>
+  </style>
