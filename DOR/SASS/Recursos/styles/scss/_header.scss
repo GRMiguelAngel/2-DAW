@@ -1,11 +1,19 @@
 header {
-    background-color: $dark;
-    padding: 10px;
-    font-family: "Dancing Script";
-    color: $secondary;
     display: flex;
-    align-content: center;
-}
+    font-family: "Dancing Script";
+    background-color: $dark;
+    color: $secondary;
+    ul {
+        margin: 0;
+        list-style-type: none;
+        align-content: center;
+        margin-left: auto;
+        li {
+            display: inline-block;
+            }
+        }
+    }
+
 .sass_logo {
     height: 40px;
     width: 60px;

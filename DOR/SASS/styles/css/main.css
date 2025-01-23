@@ -1,0 +1,19 @@
+header {
+  background-color: black;
+  padding: 10px;
+}
+header .sass_logo {
+  height: 40px;
+  width: 60px;
+}
+
+body {
+  margin: 0;
+}
+
+@font-face {
+  font-family: dancing-script;
+  src: url(/Recursos/styles/fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+  font-style: normal;
+  font-weight: normal;
+}/*# sourceMappingURL=main.css.map */
