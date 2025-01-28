@@ -2,13 +2,41 @@
 @import "_header";
 @import "_body";
 
-
 main {
+  display: flex;
+  height: 500px;
   background-color: $primary;
   color: $secondary;
-  height: 500px;
-  div {
+
+  .card {
+    display: inline-block;
+    height: 300px;
+    width: 500px;
     margin: 10px;
+    border: 1px solid $dark;
+    border-radius: 8px;
     background-color: $dark;
+    position: relative; // Añadido para posicionar el pseudo-elemento correctamente
+    overflow: hidden; // Asegura que el pseudo-elemento no se salga de la card
+    p{
+      margin-left: 45%;
+      color: $primary;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 40%; // La imagen ocupa el 40% del ancho de la card
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  @for $i from 1 to 5 {
+    .v#{$i}::before {
+      background-image: url(/img/volcan#{$i}.jpeg);
+    }
   }
 }

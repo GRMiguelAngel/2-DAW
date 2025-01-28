@@ -1,8 +1,16 @@
 header {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   font-family: "Dancing Script";
   background-color: black;
   color: #CC6698;
+}
+header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header ul {
   margin: 0;
@@ -21,7 +29,7 @@ header ul li {
 
 body {
   margin: 0;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 @font-face {
@@ -31,11 +39,44 @@ body {
   src: url("/styles/fonts/DancingScript-VariableFont_wght.ttf") format("truetype");
 }
 main {
+  display: flex;
+  height: 500px;
   background-color: white;
   color: #CC6698;
-  height: 500px;
 }
-main div {
+main .card {
+  display: inline-block;
+  height: 300px;
+  width: 500px;
   margin: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
   background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+main .card p {
+  margin-left: 45%;
+  color: white;
+}
+main .card::before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+main .v1::before {
+  background-image: url(/img/volcan1.jpeg);
+}
+main .v2::before {
+  background-image: url(/img/volcan2.jpeg);
+}
+main .v3::before {
+  background-image: url(/img/volcan3.jpeg);
+}
+main .v4::before {
+  background-image: url(/img/volcan4.jpeg);
 }/*# sourceMappingURL=main.css.map */

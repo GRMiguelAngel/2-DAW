@@ -1,8 +1,16 @@
 header {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
     font-family: "Dancing Script";
     background-color: $dark;
     color: $secondary;
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     ul {
         margin: 0;
         list-style-type: none;
