@@ -1,0 +1,19 @@
+{ 
+    "courses": [
+        {
+            "id": 1,
+            "title": "Piano course",
+            "price": 20
+        },
+        {
+            "id": 2,
+            "title": "Haute cuisine course",
+            "price": 60
+        },
+        {
+            "id": 3,
+            "title": "digitization course",
+            "price": 34
+        }
+    ]
+}
