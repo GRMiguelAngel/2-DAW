@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import HelloWorld from './components/HelloWorld.vue'
+import Main from './components/Main.vue'
 </script>
 
 <template>
+  <Main></Main>
 
-  <RouterView />
 </template>
 
 <style scoped>
@@ -13,6 +15,10 @@ header {
   max-height: 100vh;
 }
 
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
 
 nav {
   width: 100%;
@@ -46,6 +52,9 @@ nav a:first-of-type {
     padding-right: calc(var(--section-gap) / 2);
   }
 
+  .logo {
+    margin: 0 2rem 0 0;
+  }
 
   header .wrapper {
     display: flex;
