@@ -1,0 +1,25 @@
+{
+    "productsInfo": {
+        "title": "Products",
+        "products": [
+            {
+                "title": "Curso de piano",
+                "image": "src/assets/images/piano.webp",
+                "description": "Curso de piano para principiantes.",
+                "price": 20
+            },
+            {
+                "title": "Curso de guitarra",
+                "image": "/images/vue.png",
+                "description": "Curso de guitarra para principiantes.",
+                "price": 30
+            },
+            {
+                "title": "Curso de pintura",
+                "image": "/images/vue.png",
+                "description": "Curso de pintura para principiantes.",
+                "price": 18
+            }
+        ]
+    }
+}
