@@ -1,4 +1,28 @@
 <script setup lang="ts">
+const filter = document.querySelector<HTMLInputElement>("#search-bar");
+const form = document.getElementById('search-button')
+
+function filtering() {
+    const items = document.querySelectorAll<HTMLElement>(".title");
+    const searchValue = filter.value.toLowerCase();
+    console.log(items)
+
+    items.forEach((item) => {
+      if (item.textContent && item.textContent.toLowerCase().includes(searchValue)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  };
+
+
+if (form) {
+  form.addEventListener("click", (event) => {
+    event.preventDefault();
+  });
+}
+
 </script>
 
 <template>
@@ -17,8 +41,8 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0 d-flex">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0 ms-1" type="submit">Search</button>
+            <input class="form-control mr-sm-2" type="search" id="search-bar" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 ms-1" id="search-button" type="submit" @click.prevent="filtering()">Search</button>
           </form>
           </div>
         </div>

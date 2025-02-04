@@ -22,7 +22,7 @@ export default {
         <ProductCard
         v-for="(product) in products"
         :data="product"
-        class="col-6 ">
+        class="col-12">
     </ProductCard>
 
     </main><br>
