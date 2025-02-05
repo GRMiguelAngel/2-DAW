@@ -40,13 +40,13 @@ if (form) {
                 <li class="nav-item p-1">
                 <router-link class="nav-link" v-bind:to="{ name: 'contact'}">Contacto</router-link>
                 </li>
-                <form class="form-inline my-2 my-lg-0 d-flex col-6">
+                <form class="form-inline my-2 my-lg-0 d-flex">
                   <input class="form-control mr-sm-2" type="search" id="search-bar" placeholder="Search">
                   <button class="btn btn-outline-success my-2 my-sm-0 ms-1" id="search-button" type="submit" @click.prevent="filtering()">Search</button>
                 </form>
               </ul>
+              <router-link class="nav-link ml-5" v-bind:to="{ name: 'profile'}">Perfil</router-link>
             </div>
-            <router-link class="nav-link ml-5" v-bind:to="{ name: 'profile'}">Perfil</router-link>
           </div>
         </div>
       </nav>

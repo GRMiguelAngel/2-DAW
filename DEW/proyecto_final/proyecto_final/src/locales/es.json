@@ -10,13 +10,13 @@
             },
             {
                 "title": "Curso de guitarra",
-                "image": "/images/vue.png",
+                "image": "src/assets/images/guitarra.jpg",
                 "description": "Curso de guitarra para principiantes.",
                 "price": 30
             },
             {
                 "title": "Curso de pintura",
-                "image": "/images/vue.png",
+                "image": "src/assets/images/pintura.jpg",
                 "description": "Curso de pintura para principiantes.",
                 "price": 18
             }

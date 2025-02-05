@@ -10,7 +10,7 @@
                 {{ data.description }}
             </p>
             <p>
-                Price: {{ data.price }}
+                Precio: {{ data.price }}
             </p>
         </div>
         
