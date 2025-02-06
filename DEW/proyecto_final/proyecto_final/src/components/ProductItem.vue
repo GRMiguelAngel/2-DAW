@@ -1,6 +1,6 @@
 
 <template>
-    <div class="card d-flex justify-content-center align-items-center">
+    <div class="card justify-content-center align-items-center">
             <h3 class="pt-2 title">{{ data.title }}</h3>
         <div class="product-image p-2">
             <img :src="data.image" >

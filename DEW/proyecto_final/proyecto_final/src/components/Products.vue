@@ -1,18 +1,19 @@
 <script lang="ts">
 import ProductCard from './ProductItem.vue';
-import productsData from "../locales/es.json";
+import { useSearchStore } from '@/stores/searchStore';
 
 export default {
     name: "Products",
     components: {
         ProductCard,
     },
-    data() {
+
+    setup() {
+    const searchStore = useSearchStore();
     return {
-        title: productsData.productsInfo.title || "Habilidades",
-        products: productsData.productsInfo.products || [],
+      filteredCourses: searchStore.filteredCourses, // Obtiene los cursos filtrados
     };
-    },
+  },
 };
 
 </script>
@@ -20,14 +21,13 @@ export default {
 <template>
     <main class="row">
         <ProductCard
-        v-for="(product) in products"
+        v-for="(product) in filteredCourses"
         :data="product"
         class="col-12">
     </ProductCard>
 
     </main><br>
 
-    <footer>Contactos</footer>
 </template>
 
 <style>
