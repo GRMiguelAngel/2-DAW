@@ -1,6 +1,6 @@
 <script lang="ts">
 import { useSearchStore } from '@/stores/searchStore';
-import { watch } from 'vue';
+import { ref } from 'vue';
 
 export default {
   data() {
@@ -9,7 +9,7 @@ export default {
     };
   },
   methods: {
-    updateSearch() {
+    updateSearch(){
       // Emite el valor de búsqueda al componente padre
       const searchStore = useSearchStore();
       searchStore.setSearchQuery(this.inputValue);

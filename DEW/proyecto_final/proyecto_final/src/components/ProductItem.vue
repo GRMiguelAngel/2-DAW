@@ -1,3 +1,20 @@
+        <script lang="ts">
+            export default {
+            name: "ProductCard",
+            props: {
+                data: {
+                type: Object,
+                required: true,
+                default: () => ({
+                    title: "",
+                    image: "",
+                    description: "",
+                    price: 10,
+                }),
+                },
+            },
+            };
+        </script>
 
 <template>
     <div class="card justify-content-center align-items-center">
@@ -22,24 +39,4 @@
     height: 150px;
     border-radius: 8px;
 }
-
-
 </style>
-
-<script lang="ts">
-    export default {
-    name: "ProductCard",
-    props: {
-        data: {
-        type: Object,
-        required: true,
-        default: () => ({
-            title: "",
-            image: "",
-            description: "",
-            price: 10,
-        }),
-        },
-    },
-    };
-</script>
