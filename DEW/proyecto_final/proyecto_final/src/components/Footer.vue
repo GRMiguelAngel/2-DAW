@@ -12,10 +12,14 @@
 
 <style scoped>
 footer {
+    position: absolute;
+    bottom: 0;
     background-color: #333;
     color: #fff;
     padding: 1rem;
     text-align: center;
+    width: 100%;
+
     }
 
 

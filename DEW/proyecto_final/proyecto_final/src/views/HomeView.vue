@@ -3,7 +3,5 @@ import Products from '../components/Products.vue';
 </script>
 
 <template>
-  <main>
-    <Products></Products>
-  </main>
+    <Products/>
 </template>

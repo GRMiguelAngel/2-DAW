@@ -17,7 +17,7 @@
         </script>
 
 <template>
-    <div class="card justify-content-center align-items-center">
+    <div class="card align-items-center col col-4">
             <h3 class="pt-2 title">{{ data.title }}</h3>
         <div class="product-image p-2">
             <img :src="data.image" >
@@ -37,6 +37,7 @@
 <style>
 .product-image img {
     height: 150px;
+    width: 150px;
     border-radius: 8px;
 }
 </style>

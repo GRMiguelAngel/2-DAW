@@ -6,16 +6,15 @@ import Footer from './components/Footer.vue';
 
 <template>
 
-  <Navbar></Navbar>
+<Navbar></Navbar>
 
-  <div class="container-fluid">
-    <RouterView></RouterView>
-  </div>
+<RouterView></RouterView>
 
-<Footer></Footer>
 
 </template>
 
 <style scoped>
-
+div {
+    padding-top: 80px;
+}
 </style>
